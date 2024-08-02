@@ -1,0 +1,13 @@
+package l.io.ex3;
+
+public class Run {
+
+	//주의사항 자바 프로젝트의 경로 = C:\workspace\1_JAVA\JavaProject
+	public static void main(String[] args) {
+//		new FileByte().fileSave();
+//		new FileByte().fileRead();
+//		new FileChar().fileSave();
+		new FileChar().fileRead();
+	}
+
+}

@@ -1,0 +1,127 @@
+package mini_project;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Menu {
+	private Scanner sc = new Scanner(System.in);
+	private UserController uc = new UserController();
+	
+	
+	
+	//Menu(입출력객체) : 사용자로부터 입력과출력을 받아 Controller의 각 기능을 활용하는 객체
+	// 안내문자
+	// 아이디와 비밀번호를 입력받아 일치하면 게임선택 화면으로 넘어감
+	// 게임에서 이기면 입력된 아이디의 승패가 누적됨
+	public void loginMenu() {
+		int menu = 0;
+		while(menu != 9) {
+			try {
+				System.out.println("게임대전에 오신것을 환영합니다.");
+				System.out.println("1. 기존회원");
+				System.out.println("2. 새 회원");
+				System.out.println("9. 게임종료\n");
+				System.out.print("선택 메뉴 : ");
+				menu = sc.nextInt();
+			}
+			catch(InputMismatchException e){
+				System.out.println("숫자만 입력해주세요.");
+			}
+			switch(menu) {
+			case 2:
+				this.userAdd();
+				break;
+			case 1:
+				if(this.logIn()) this.gameMenu();
+			case 9:
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			default:
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+			}
+		}
+	}
+	
+	
+	
+	public void gameMenu() {
+		
+	}
+	
+	
+	
+	//아이디, 비밀번호, 닉네임을 받아서 uc.logIn으로 보내서 boolean값을 반환받음
+	public boolean logIn() {
+		for(int i = 0; i < 5; i++) {
+			System.out.println("아이디 : ");
+			String id = sc.nextLine();
+			System.out.println("비밀번호 : ");
+			String pw = sc.nextLine();
+			System.out.println("닉네임 : ");
+			String nickName = sc.nextLine();
+			boolean login = uc.logIn(id, pw, nickName);
+			if(login) {
+				System.out.printf("%d님 환영합니다.", nickName);
+				return true;
+			}
+			else {
+				System.out.println("아이디나 비밀번호가 일치하지 않습니다.");
+				System.out.println("로그인 5회 실패 시 프로그램이 종료됩니다.");
+			}
+		}
+		return false;
+	}
+	
+	
+	
+	// 유저 등록
+	// 이름, 아이디, 비밀번호를 입력받음
+	public void userAdd() {
+		
+	}
+	
+	
+	
+	//유저 삭제
+	public void userDelete() {
+		
+	}
+	
+	
+	
+	//게임이 끝나면 ~~~게임 ㅇㅇㅇ vs xxx ㅇㅇㅇ승 이런 형식으로 메모장에 저장
+	public void gameRecord() {
+		
+	}
+	
+	
+	
+	// 1. 유저 이름으로 게임기록 검색
+	// 1-1. 유저간 대결기록 총 00게임중 00승 00패
+	// 2. 전체 게임기록 검색
+	// 3. 게임별로 기록검색
+	public void search() {
+		
+	}
+	
+	
+	
+	//대전기록 전체 출력
+	public void searchAll() {
+		
+	}
+	
+	
+	
+	//랭킹표
+	public void rank() {
+		
+	}
+	
+	
+	
+	//게임설명
+	public void gameRule() {
+		
+	}
+}

@@ -1,0 +1,8 @@
+package test240726.object2;
+
+public class Music {
+	private String title;
+	private String singer;
+	
+	
+}

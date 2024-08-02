@@ -1,0 +1,61 @@
+package Test01;
+
+public class Test999 {
+	public static void main(String[] args) {
+//		int num1 = 10 + 3;
+//		int num2 = 10 - 3;
+//		int num3 = 10 * 3;
+//		int num4 = 10 / 3;
+//		int num5 = 10 % 3;
+//		int num6 = 10 + 9 - 15 % 8 / 6 * 5;
+//		System.out.println(num1);		//결과 -> 1
+//		System.out.println(num2);		//결과 -> 1
+//		System.out.println(num3);		//결과 -> 1
+//		System.out.println(num4);		//결과 -> 1
+//		System.out.println(num5);		//결과 -> 1
+//		System.out.println(num6);		//결과 -> 1
+//		boolean a, b, c, d, e, f;
+//		a = 10 > 3;
+//		b = 10 < 3;
+//		c = 10 <= 3;
+//		d = 10 >= 3;
+//		e = 10 == 3;
+//		f = 10 != 3;
+//		System.out.println(a);		//결과 -> true
+//		System.out.println(b);		//결과 -> false
+//		System.out.println(c);		//결과 -> false
+//		System.out.println(d);		//결과 -> true
+//		System.out.println(e);		//결과 -> false
+//		System.out.println(f);		//결과 -> true
+		
+//		boolean a, b, c;
+//		a = (10 > 5) && (10 < 9);
+//		b = (10 > 5) || (10 < 9);
+//		c = !(10 < 9);
+//		System.out.println(a);	// false
+//		System.out.println(b);	// true
+//		System.out.println(c);	// true
+		
+//		int a = 0, b = 0, c = 0, d = 0;
+//		System.out.println(a++);
+//		System.out.println(++b);
+//		System.out.println(c--);
+//		System.out.println(--d);
+		
+		int a = 1, b = 2, c =3, d = 4, e = 5, f = -8, g = -8;
+		a = a & b;
+		b = a | b;
+		c = c ^ d;
+		d = ~d;
+		e = e << 1;
+		f = f >> 1;
+		g = g >>> 1;
+		System.out.println(a);		//0
+		System.out.println(b);		//2
+		System.out.println(c);		//7
+		System.out.println(d);		//-5
+		System.out.println(e);		//10
+		System.out.println(f);		//3
+		System.out.println(g);		//3
+	}
+}
