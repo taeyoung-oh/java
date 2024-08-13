@@ -1,27 +1,32 @@
 package Test01;
 
-import java.net.InetAddress;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Test999 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		//방법1
-		int arr1[] = {1, 2, 3, 4};
-		int arr2[] = new int[4];
-		for(int i = 0; i < arr2.length; i++) {
-			arr2[i] = arr1[i];
-			System.out.printf("%d ", arr2[i]);
+		boolean answer = true;
+		String s = "(()))(()";
+		int l = 0;
+		int r = 0;
+		int half_l = 0;
+		int half_r = 0;
+		if(s.length() % 2 == 0) {
+			for(int i = 0; i< s.length() / 2; i++) {
+				if(s.charAt(i) == '(') r++;
+				else l++;
+			}
+			if(l != r) answer = false;
+			for(int i = (int)(s.length() / 2); i< s.length(); i++) {
+				if(s.charAt(i) == '(') half_r++;
+				else half_l++;
+			}
+			if(half_l != half_r) answer = false;
+			if(s.charAt(0) == ')' || s.charAt(s.length()-1) == '(') answer = false;
 		}
-		//방법2
-		System.arraycopy(arr1, 0, arr2, 0, arr1.length);
-		//방법3
-		arr2 = Arrays.copyOf(arr1, arr1.length);
-		//방법4
-		arr2 = arr1.clone();
-		InetAddress.getLocalHost();
+		else answer = false;
+		int total_l = l + half_l;
+		int total_r = r + half_r;
+		if(l != r) answer = false;
+        
+        
+        System.out.println(answer);
 	}
-	
 }

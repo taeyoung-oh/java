@@ -1,0 +1,39 @@
+package mini_project;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class UserSave {
+	
+	//UC.userAdd에서 값을 보내면 객체로 
+	public void userSave(String id, String password, String nickname) {
+		User u = new User(id, password, nickname);
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(id + ".txt"));) {
+			oos.writeObject(u);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	//아직 어디서 요청을 받을지 미정
+	public User userRead(String id) {
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(id + ".txt"));) {
+			User user = (User)ois.readObject();
+			return user;
+		} catch (FileNotFoundException e) {
+			return null;
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

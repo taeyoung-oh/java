@@ -1,5 +1,0 @@
-package mini_project;
-
-public class UserController {
-	//Controller(접근객체) : Book배열을 가지고있어 접근하여 각 기능을 수행해주는 객체
-}

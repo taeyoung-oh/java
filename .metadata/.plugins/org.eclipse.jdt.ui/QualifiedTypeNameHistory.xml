@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="test240715.object3.CircleController"/>
-    <fullyQualifiedTypeName name="test240715.object3.RectangleController"/>
-    <fullyQualifiedTypeName name="test240717.object1.LibraryController"/>
     <fullyQualifiedTypeName name="test240717.object1.LibraryMenu"/>
     <fullyQualifiedTypeName name="test240718.object3.GalaxyNote9"/>
     <fullyQualifiedTypeName name="test240718.object3.V40"/>
@@ -30,7 +27,6 @@
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="mini_project.Menu"/>
     <fullyQualifiedTypeName name="l.io.ex3.FileByte"/>
-    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.io.FileWriter"/>
     <fullyQualifiedTypeName name="m.api.ex1.A_Math"/>
     <fullyQualifiedTypeName name="m.api.ex1.B_String"/>
@@ -47,7 +43,6 @@
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="java.net.ServerSocket"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.net.InetAddress"/>
     <fullyQualifiedTypeName name="java.net.DatagramSocket"/>
     <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
@@ -60,4 +55,9 @@
     <fullyQualifiedTypeName name="test240731.object1.FarmController"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.OutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.net.InetAddress"/>
 </qualifiedTypeNameHistroy>

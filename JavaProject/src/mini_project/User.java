@@ -1,7 +1,8 @@
 package mini_project;
 
-public class User {
-	//VO(저장객체) : Book과같은 실제 데이터를 가지고있는 객체
+import java.io.Serializable;
+
+public class User implements Serializable{
 	//유저를 하나하나 file로 받아서 저장.
 	private String id;
 	private String password;

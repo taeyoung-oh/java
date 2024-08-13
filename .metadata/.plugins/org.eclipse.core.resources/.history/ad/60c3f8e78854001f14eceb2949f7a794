@@ -1,0 +1,25 @@
+package mini_project;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class UserSave {
+	
+	public void userSave(String id, String password, String nickname) {
+		User u = new User(id, password, nickname);
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("product1.txt"));) {
+			oos.writeObject(u);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void userRead(String id) {
+		
+	}
+}

@@ -23,21 +23,24 @@ public class Menu {
 				System.out.println("9. 게임종료\n");
 				System.out.print("선택 메뉴 : ");
 				menu = sc.nextInt();
+				sc.nextLine();
+				
+				switch(menu) {
+				case 2:
+					this.userAdd();
+					break;
+				case 1:
+					if(this.logIn()) this.gameMenu();
+				case 9:
+					System.out.println("프로그램을 종료합니다.");
+					break;
+				default:
+					System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+				}
 			}
 			catch(InputMismatchException e){
 				System.out.println("숫자만 입력해주세요.");
-			}
-			switch(menu) {
-			case 2:
-				this.userAdd();
-				break;
-			case 1:
-				if(this.logIn()) this.gameMenu();
-			case 9:
-				System.out.println("프로그램을 종료합니다.");
-				break;
-			default:
-				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+				sc.nextLine();
 			}
 		}
 	}
@@ -60,29 +63,56 @@ public class Menu {
 		while(add != 0) {
 			if(add == -1) {
 				System.out.print("아이디 : ");
-				id = sc.nextLine();
+				id = sc.next();
 				System.out.print("비밀번호 : ");
-				password = sc.nextLine();
+				password = sc.next();
 				System.out.print("닉네임 : ");
-				nickName = sc.nextLine();
+				nickName = sc.next();
 				add = uc.userAdd(id, password, nickName);
 			}
-			else if(add == 0) {
-				System.out.printf("%s님 새로운 회원이되신것을 환영합니다.", nickName);
-			}
 			else if(add == 1) {
+				sc.nextLine();
 				System.out.println("이미 사용중인 아이디입니다.");
-				System.out.println("다른 아이디를 입력하세요.");
+				System.out.println("이미 사용중인 닉네임입니다.");
+				System.out.println("다른 아이디, 닉네임을 입력하세요.");
 				System.out.print("아이디 : ");
 				id = sc.nextLine();
+				System.out.print("비밀번호 : ");
+				password = sc.next();
+				System.out.print("닉네임 : ");
+				nickName = sc.next();
 				add = uc.userAdd(id, password, nickName);
 			}
 			else if(add == 2) {
+				sc.nextLine();
+				System.out.println("이미 사용중인 아이디입니다.");
+				System.out.println("다른 아이디를 입력하세요.");
+				System.out.print("아이디 : ");
+				id = sc.next();
+				System.out.print("비밀번호 : ");
+				password = sc.next();
+				System.out.print("닉네임 : ");
+				nickName = sc.next();
+				add = uc.userAdd(id, password, nickName);
+			}
+			else if(add == 3) {
+				sc.nextLine();
 				System.out.println("이미 사용중인 닉네임입니다.");
 				System.out.println("다른 닉네임을 입력하세요.");
+				System.out.print("아이디 : ");
+				id = sc.next();
+				System.out.print("비밀번호 : ");
+				password = sc.next();
 				System.out.print("닉네임 : ");
-				nickName = sc.nextLine();
+				nickName = sc.next();
 				add = uc.userAdd(id, password, nickName);
+			}
+			else if(add == 999) {
+				System.out.println("uc.userAdd error");
+			}
+			if(add == 0) {
+				System.out.printf("%s님 새로운 회원이되신것을 환영합니다.\n", nickName);
+				System.out.println();
 			}
 		}
 	}
@@ -90,6 +120,7 @@ public class Menu {
 	
 	
 	//유저 삭제
+	//?? 어케함
 	public void userDelete() {
 		
 	}
@@ -100,12 +131,12 @@ public class Menu {
 	public boolean logIn() {
 		for(int i = 0; i < 5; i++) {
 			System.out.print("아이디 : ");
-			String id = sc.nextLine();
+			String id = sc.next();
 			System.out.print("비밀번호 : ");
-			String pw = sc.nextLine();
+			String pw = sc.next();
 			String login = uc.logIn(id, pw);
 			if(login != null) {
-				System.out.printf("%d님 환영합니다.", login);
+				System.out.printf("%s님 환영합니다.\n", login);
 				return true;
 			}
 			else {
